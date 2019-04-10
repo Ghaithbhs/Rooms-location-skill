@@ -7,10 +7,7 @@ class FocusDepartments(MycroftSkill):
 
     @intent_file_handler('departments.focus.intent')
     def handle_departments_focus(self, message):
-	if message.data =="where is the it":
-            self.speak_dialog('departments.focus')
-	else: 
-	    self.speak_dialog('cafeteria.focus')
+        self.speak_dialog('departments.focus')
 
 #    @intent_handler(IntentBuilder().require("question"))
 #    def handle_departments_focus(self, message):
