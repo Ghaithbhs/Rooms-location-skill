@@ -9,7 +9,7 @@ class FocusDepartments(MycroftSkill):
 #    def handle_departments_focus(self, message):
 #        self.speak_dialog('departments.focus')
 
-    @intent_handler(IntentBuilder().require("querry").require("department"))
+    @intent_handler(IntentBuilder(" ").require("querry").require("department"))
     def handle_departments_focus(self, message):
         if message.data["department"] == "support":
 	    self.speak_dialog('departments.focus')
