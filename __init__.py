@@ -1,4 +1,7 @@
+from adapt.intent import IntentBuilder
+from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft import MycroftSkill, intent_file_handler
+from mycroft.util.log import LOG
 
 
 class FocusDepartments(MycroftSkill):
@@ -11,7 +14,7 @@ class FocusDepartments(MycroftSkill):
 
     @intent_handler(IntentBuilder(" ").require("querry").require("department"))
     def handle_departments_focus(self, message):
-        if message.data["department"] == "support":
+        if message.data["department"] == "Ghaith":
 	    self.speak_dialog('departments.focus')
 	elif message.data["department"] == "buvette":
 	    self.speak_dialog('cafeteria.focus')
