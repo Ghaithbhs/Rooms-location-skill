@@ -12,7 +12,7 @@ class RoomsLocation(MycroftSkill):
     def handle_departments_focus(self, message):
         if message.data["Room"] == "bathroom":
             self.speak_dialog('bathroom.location')
-	elif message.data["Room"] == "Bedroom":
+	elif message.data["Room"] == "bedroom":
 	    self.speak_dialog('Bedroom.location')
 
 def create_skill():
