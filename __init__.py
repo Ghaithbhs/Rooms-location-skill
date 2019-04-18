@@ -4,21 +4,17 @@ from mycroft import MycroftSkill, intent_file_handler
 from mycroft.util.log import LOG
 
 
-class FocusDepartments(MycroftSkill):
+class RoomsLocation(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-#    @intent_file_handler('departments.focus.intent')
-#    def handle_departments_focus(self, message):
-#        self.speak_dialog('departments.focus')
-
-    @intent_handler(IntentBuilder(" ").require("department"))
+    @intent_handler(IntentBuilder("").require("querry").require("Room")
     def handle_departments_focus(self, message):
-        if message.data["department"] == "Ghaith":
-	    self.speak_dialog('departments.focus')
-	elif message.data["department"] == "buvette":
-	    self.speak_dialog('cafeteria.focus')
+        if message.data["Room"] == "bathroom":
+            self.speak_dialog('bathroom.location')
+	elif message.data["Room"] == "Bedroom":
+	    self.speak_dialog('Bedroom.location')
 
 def create_skill():
-    return FocusDepartments()
+    return RoomsLocation()
 
